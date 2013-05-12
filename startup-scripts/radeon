@@ -1,0 +1,2 @@
+#Sets dynamic power control for gpu
+sudo echo dynpm > /sys/class/drm/card0/device/power_method
