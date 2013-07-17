@@ -1,8 +1,8 @@
 # TMUX
-if which tmux 2>&1 >/dev/null; then
+#if which tmux 2>&1 >/dev/null; then
     #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && (tmux -u attach || tmux -u new-session)
-fi
+    #test -z "$TMUX" && (tmux -u attach || tmux -u new-session)
+#fi
 
 
 # Path to your oh-my-zsh configuration.
@@ -13,13 +13,9 @@ ZSH=/usr/share/oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="frisk"
-#ZSH_THEME="frisk"
-ZSH_THEME="frisk"
+ZSH_THEME="frisk-custom"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-#alias ls="ls --width=10"
+#aliases
 alias weechat="weechat-curses"
 
 # Set to this to use case-sensitive completion
@@ -43,17 +39,16 @@ alias weechat="weechat-curses"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
+
 plugins=(git vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/sbin:/sbin:/home/bjarke/Workspace/scripts
+# PATH
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/sbin:/sbin:/home/bjarke/Workspace/scripts:/home/bjarke/Workspace/scripts/startup-scripts:/usr/bin/vendor_perl:/usr/bin/core_perl
 
 # Git restore file
 function git_restore { git checkout $(git rev-list -n 1 HEAD -- "$1")^ -- "$1"; }
 export git_restore
 
-
 export EDITOR=vim
-#xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'

@@ -27,13 +27,13 @@ URxvt.lineSpace:            0
 
 ! Fonts
 URxvt*font: xft:Droid\ Sans\ Mono\ for\ Powerline:antialias=true:pixelsize=13
+URxvt.allow_bold:           false
+
 #URxvt*boldFont: xft:DroidSansMonoForPowerline:antialias=true:pixelsize=13
 #URxvt*font: xft:DroidSansMonoForPowerline:size=10
 #URxvt*boldFont: xft:DroidSansMonoForPowerline:size=10
 #URxvt*font: xft:Inconsolata\ for\ Powerline:size=10
 #URxvt*boldFont: xft:Inconsolata\ for\ Powerline::size=10
-URxvt.allow_bold:           false
-
 #URxvt*font: xft:DejaVu Sans Mono for Powerline:size=10.5
 #URxvt*imFont: xft:DejaVu Sans Mono for Powerline:size=10.5
 #URxvt*boldFont: xft:DejaVu Sans Mono Bold for Powerline:size=10.5
@@ -44,7 +44,7 @@ URxvt.allow_bold:           false
 #URxvt*font: xft:DejavuSansMono:size=10.5
 #URxvt*boldFont: xft:Monospace-Bold:pixelsize=14
 
-! Fix font space
+! Fix font spacing
 URxvt*letterSpace: -1.1
 
 ! Scrollbar
@@ -54,7 +54,7 @@ URxvt.scrollBar:            false
 ! Perl extensions
 #URxvt.perl-ext-common:      default,matcher
 #URxvt.matcher.button:       1
-#URxvt.urlLauncher:          chromium
+#URxvt.urlLauncher:          firefox
 
 ! Cursor
 URxvt.cursorBlink:          true
@@ -65,7 +65,6 @@ URxvt.cursorUnderline:      false
 URxvt.pointerBlank:         true
 
 !!Source http://github.com/altercation/solarized
-
 *background: #002b36
 *foreground: #657b83
 !!*fading: 40

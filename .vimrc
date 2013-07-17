@@ -2,9 +2,11 @@ set encoding=utf-8
 set termencoding=utf-8
 set nocompatible
 set ignorecase
+set autochdir
 
 "line numbers
 set number
+
 
 "syntax
 filetype plugin on
@@ -49,9 +51,24 @@ Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'scrooloose/nerdtree'
 "Bundle 'klen/python-mode' 
 Bundle 'davidhalter/jedi-vim'
+"Bundle 'stephenmckinney/vim-solarized-powerline'
 
-"nerdtree
-map <F2> :NERDTreeToggle<CR>
+function! SwitchSourceHeader()
+      "update!
+    if (expand ("%:e") == "cpp")
+        find %:t:r.h*
+    else
+        find %:t:r.cpp
+    endif
+endfunction
+"Bindings
+map <F1> :NERDTreeToggle<CR>
+map <F2> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <F4> :call SwitchSourceHeader()<CR>
+map <F5> :YcmForceCompileAndDiagnostics<CR>
+map <F6> :!ack <C-R><C-W><CR>
+"map <F2> :YcmCompleter GoToDefinition<CR>
+"map <F3> :YcmCompleter GoToDeclaration<CR>
 "powerline 
 if has ("gui_running")
     set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 9
