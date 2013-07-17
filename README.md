@@ -1,4 +1,5 @@
 dotfiles
 ========
 
-Linux config files
+Linux config files, mainly used on an Arch Linux install.
+Most config files are not made portable.
