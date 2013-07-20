@@ -58,7 +58,8 @@ bindsym $mod+d scratchpad show
 bindsym $mod+Return exec --no-startup-id urxvt
 
 # app shortcuts 
-bindsym $mod+g exec "nemo"
+bindsym $mod+g exec "urxvt -e ranger"
+#bindsym $mod+g exec "nemo"
 bindsym $mod+c exec "firefox"
 bindsym $mod+x exec "pavucontrol"
 for_window [class="Nemo"] floating enable
