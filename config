@@ -17,11 +17,12 @@ exec_always $scripts/xmodmaprc
 exec_always $scripts/urxvtd
 exec_always $scripts/xset
 exec_always $scripts/misc
+exec_always $scripts/triplehead
 exec_always "/usr/bin/start-pulseaudio-x11 --start"
 exec_always "/usr/bin/pulseaudio --start"
 exec_always '/usr/bin/amixer -c 0 sset "Auto-Mute Mode" Disabled'
 exec_always "pa-applet"
-exec_always "redshift -l 56.2:10.7 -t 6500:5300"
+exec_always "redshift -l 56.2:10.7 -t 6500:5200"
 
 set $mod Mod1
 
@@ -201,9 +202,9 @@ new_window pixel 2
 # finds out, if available)
 bar {
    status_command          i3status
-   position 	            top	
+   position 	           top	
    font                    pango:DroidSansMonoSlashed 10
-   tray_output             DFP1
+   tray_output             primary
 
    colors { 
       background           #222222

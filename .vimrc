@@ -3,17 +3,22 @@ set termencoding=utf-8
 set nocompatible
 set ignorecase
 set autochdir
-
-"line numbers
 set number
+set autoread
+set nohlsearch
+set incsearch
 
 "syntax
 filetype plugin on
 syntax on
-"
+
 "colorscheme
 colorscheme solarized
 set background=dark
+
+"splits
+set splitbelow
+set splitright
 
 "tab
 set tabstop=4
@@ -23,7 +28,11 @@ set cindent
 set smartindent
 set autoindent
 set cinkeys=0{,0},:,0#,!^F
-"
+
+" trailing whitespace
+set list
+set listchars=tab:>-,trail:-
+
 "Bindings
 map <F1> :NERDTreeToggle<CR>
 map <F2> :YcmCompleter GoToDefinitionElseDeclaration<CR>
