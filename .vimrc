@@ -10,6 +10,7 @@ set incsearch
 
 "syntax
 filetype plugin on
+filetype plugin indent on
 syntax on
 
 "colorscheme
@@ -30,8 +31,8 @@ set autoindent
 set cinkeys=0{,0},:,0#,!^F
 
 " trailing whitespace
-set list
-set listchars=tab:>-,trail:-
+"set list
+"set listchars=tab:>-,trail:-
 
 "Bindings
 map <F1> :NERDTreeToggle<CR>
@@ -70,6 +71,12 @@ augroup END
       "\ setlocal omnifunc=syntaxcomplete#Complete |
    "\ endif
 "endif 
+
+"Latex
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor = "latex"
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_MultipleCompileFormats='pdf, aux'
 
 "YCM
 let g:ycm_confirm_extra_conf = 0
