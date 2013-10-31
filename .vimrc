@@ -1,3 +1,18 @@
+"Vundle 
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'gerw/vim-latex-suite'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'scrooloose/nerdtree'
+Bundle 'davidhalter/jedi-vim'
+Bundle 'fholgado/minibufexpl.vim'
+Bundle 'tomasr/molokai'
+Bundle 'derekwyatt/vim-scala'
+
 set encoding=utf-8
 set termencoding=utf-8
 set nocompatible
@@ -14,7 +29,9 @@ filetype plugin indent on
 syntax on
 
 "colorscheme
-colorscheme solarized
+colorscheme molokai
+"let g:molokai_original=1
+let g:rehash256=1
 set background=dark
 
 "splits
@@ -46,6 +63,7 @@ map <F7> :!ack <C-R><C-W><CR>
 "powerline 
 if has ("gui_running")
     set guifont=Droid\ Sans\ Mono\ for\ Powerline\ 9
+    set lines=55 columns=165
 endif
 set laststatus=2
 
@@ -80,17 +98,6 @@ let g:Tex_MultipleCompileFormats='pdf, aux'
 
 "YCM
 let g:ycm_confirm_extra_conf = 0
-
-"Vundle 
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Bundle 'scrooloose/nerdtree'
-Bundle 'davidhalter/jedi-vim'
-"Bundle 'klen/python-mode' 
-"Bundle 'stephenmckinney/vim-solarized-powerline'
 
 "python
 filetype plugin indent on

@@ -6,7 +6,7 @@
 
 
 # Path to your oh-my-zsh configuration.
-ZSH=/usr/share/oh-my-zsh
+ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -17,6 +17,10 @@ ZSH_THEME="frisk-custom"
 
 #aliases
 alias weechat="weechat-curses"
+alias sshvps="ssh bjarke@bjarkevad.dk -p4944"
+alias vim="vi"
+alias yum="sudo yum"
+alias synergy="synergys -f --config /home/bjarke/.quicksynergy/synergy.conf"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -40,12 +44,12 @@ alias weechat="weechat-curses"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(git vi-mode)
+plugins=(git vi-mode scala github sbt)
 
 source $ZSH/oh-my-zsh.sh
 
 # PATH
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/sbin:/sbin:/home/bjarke/Workspace/scripts:/home/bjarke/Workspace/scripts/startup-scripts:/usr/bin/vendor_perl:/usr/bin/core_perl
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/sbin:/sbin:/home/bjarke/Workspace/shell:/home/bjarke/Workspace/shell/startup-scripts:/usr/bin/vendor_perl:/usr/bin/core_perl
 
 # Git restore file
 function git_restore { git checkout $(git rev-list -n 1 HEAD -- "$1")^ -- "$1"; }
