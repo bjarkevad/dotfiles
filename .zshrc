@@ -18,8 +18,6 @@ ZSH_THEME="frisk-custom"
 #aliases
 alias weechat="weechat-curses"
 alias sshvps="ssh bjarke@bjarkevad.dk -p4944"
-alias vim="vi"
-alias yum="sudo yum"
 alias synergy="synergys -f --config /home/bjarke/.quicksynergy/synergy.conf"
 
 # Set to this to use case-sensitive completion
