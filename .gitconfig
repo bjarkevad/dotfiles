@@ -1,0 +1,21 @@
+[user]
+	email = bjarke.vad90@gmail.com
+	name = Bjarke Vad
+[credential]
+	helper = cache --timeout=3600
+#[merge]
+    #tool = threesome
+#[mergetool "threesome"]
+    #cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
+    #trustExitCode = true
+[diff]
+	tool = kdiff3
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
+[merge]
+	tool = kdiff3
+    
+[push]
+	default = current
