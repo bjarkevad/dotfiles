@@ -19,6 +19,7 @@ ZSH_THEME="frisk-custom"
 alias weechat="weechat-curses"
 alias sshvps="ssh bjarke@bjarkevad.dk -p4944"
 alias synergy="synergys -f --config /home/bjarke/.quicksynergy/synergy.conf"
+alias open="xdg-open"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -42,7 +43,7 @@ alias synergy="synergys -f --config /home/bjarke/.quicksynergy/synergy.conf"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(git vi-mode scala github sbt)
+plugins=(git scala github sbt)
 
 source $ZSH/oh-my-zsh.sh
 
