@@ -4,6 +4,7 @@
     #test -z "$TMUX" && (tmux -u attach || tmux -u new-session)
 #fi
 
+#source /usr/share/doc/pkgfile/command-not-found.zsh
 
 # Path to your oh-my-zsh configuration.
 ZSH=~/.oh-my-zsh
@@ -13,7 +14,10 @@ ZSH=~/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="frisk"
-ZSH_THEME="frisk-custom"
+#ZSH_THEME="frisk-custom"
+#ZSH_THEME="agnoster"
+ZSH_THEME="avit"
+
 
 #aliases
 alias weechat="weechat-curses"
@@ -43,7 +47,19 @@ alias open="xdg-open"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-plugins=(git scala github sbt)
+
+plugins=(git scala github sbt vi-mode)
+
+export KEYTIMEOUT=1
+
+bindkey -v 
+
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
 
 source $ZSH/oh-my-zsh.sh
 
