@@ -12,10 +12,16 @@
 	tool = kdiff3
 [difftool]
 	prompt = false
+[difftool "kdiff3"]
+    trustExitCode = false;
 [alias]
 	d = difftool
+    plog = log --graph --oneline --all --abbrev-commit --decorate
 [merge]
 	tool = kdiff3
-    
+    trustExitCode = false;
 [push]
 	default = current
+
+[pull]
+    rebase=true

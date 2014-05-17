@@ -48,23 +48,23 @@ alias open="xdg-open"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 
-plugins=(git scala github sbt vi-mode)
+plugins=(git scala github sbt ) #vi-mode)
 
 export KEYTIMEOUT=1
 
-bindkey -v 
-
-bindkey '^P' up-history
-bindkey '^N' down-history
-bindkey '^?' backward-delete-char
-bindkey '^h' backward-delete-char
-bindkey '^w' backward-kill-word
-bindkey '^r' history-incremental-search-backward
+#bindkey -v 
+#
+#bindkey '^P' up-history
+#bindkey '^N' down-history
+#bindkey '^?' backward-delete-char
+#bindkey '^h' backward-delete-char
+#bindkey '^w' backward-kill-word
+#bindkey '^r' history-incremental-search-backward
 
 source $ZSH/oh-my-zsh.sh
 
 # PATH
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/sbin:/sbin:/home/bjarke/Workspace/shell:/home/bjarke/Workspace/shell/startup-scripts:/usr/bin/vendor_perl:/usr/bin/core_perl
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/sbin:/sbin:/home/bjarke/Workspace/shell:/home/bjarke/Workspace/shell/startup-scripts:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.cabal/bin:$PATH
 
 # Git restore file
 function git_restore { git checkout $(git rev-list -n 1 HEAD -- "$1")^ -- "$1"; }
