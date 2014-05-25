@@ -11,7 +11,7 @@ Bundle 'scrooloose/nerdtree'
 "Bundle 'davidhalter/jedi-vim'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'tomasr/molokai'
-"Bundle 'derekwyatt/vim-scala'
+Bundle 'derekwyatt/vim-scala'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'eagletmt/neco-ghc'
@@ -187,7 +187,9 @@ augroup END
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor = "latex"
 let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_MultipleCompileFormats='pdf, aux'
+"let g:Tex_MultipleCompileFormats='pdf, aux'
+let g:Tex_GotoError=0
+let g:Tex_ShowErrorContext = 0
 
 "YCM
 "let g:ycm_confirm_extra_conf = 0
