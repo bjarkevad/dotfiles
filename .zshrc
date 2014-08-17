@@ -22,6 +22,8 @@ ZSH_THEME="avit"
 #aliases
 alias weechat="weechat-curses"
 alias sshvps="ssh bjarke@bjarkevad.dk -p4944"
+alias sshdtu="ssh s142941@login.gbar.dtu.dk"
+alias sshhpc="ssh s142941@hpc-fe.gbar.dtu.dk"
 alias synergy="synergys -f --config /home/bjarke/.quicksynergy/synergy.conf"
 alias open="xdg-open"
 
