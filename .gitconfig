@@ -3,25 +3,24 @@
 	name = Bjarke Vad
 [credential]
 	helper = cache --timeout=3600
-#[merge]
-    #tool = threesome
-#[mergetool "threesome"]
-    #cmd = "vim -f $BASE $LOCAL $REMOTE $MERGED -c 'ThreesomeInit'"
-    #trustExitCode = true
 [diff]
 	tool = kdiff3
 [difftool]
 	prompt = false
 [difftool "kdiff3"]
-    trustExitCode = false;
+    trustExitCode = true;
 [alias]
 	d = difftool
     plog = log --graph --oneline --all --abbrev-commit --decorate
 [merge]
 	tool = kdiff3
-    trustExitCode = false;
+    trustExitCode = true;
 [push]
 	default = current
 
 [pull]
     rebase=true
+
+[core]
+    editor=vim
+	excludesfile = /Users/bjarke/.gitignore_global

@@ -1,26 +1,37 @@
 "Vundle 
+set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
 "Bundle 'altercation/vim-colors-solarized'
 "Bundle 'Valloric/YouCompleteMe'
-Bundle 'gerw/vim-latex-suite'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Bundle 'scrooloose/nerdtree'
-"Bundle 'davidhalter/jedi-vim'
-Bundle 'fholgado/minibufexpl.vim'
-Bundle 'tomasr/molokai'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'scrooloose/syntastic'
-Bundle 'majutsushi/tagbar'
-Bundle 'eagletmt/neco-ghc'
-Bundle 'bitc/vim-hdevtools'
-Bundle 'Shougo/neocomplcache'
+Plugin 'gerw/vim-latex-suite'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'scrooloose/nerdtree'
+"Plugin 'davidhalter/jedi-vim'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'tomasr/molokai'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar'
+Plugin 'eagletmt/neco-ghc'
+Plugin 'bitc/vim-hdevtools'
+Plugin 'Shougo/neocomplcache'
+Plugin 'gilligan/vim-lldb'
+call vundle#end()
+
+"syntax
+filetype plugin on
+filetype plugin indent on
+syntax on
+
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 set encoding=utf-8
 set termencoding=utf-8
-set nocompatible
 set ignorecase
 set autochdir
 set relativenumber
@@ -30,13 +41,9 @@ set nohlsearch
 set incsearch
 set nojoinspaces
 
-"syntax
-filetype plugin on
-filetype plugin indent on
-syntax on
 
 "colorscheme
-colorscheme molokai
+"colorscheme molokai
 "let g:molokai_original=1
 let g:rehash256=1
 set background=dark
@@ -54,6 +61,7 @@ set smartindent
 set autoindent
 set cinkeys=0{,0},:,0#,!^F
 
+set backspace=indent,eol,start
 " trailing whitespace
 "set list
 "set listchars=tab:>-,trail:-
@@ -208,3 +216,14 @@ let g:Tex_ShowErrorContext = 0
 "let g:ymc_filetype_blacklist = {'python' : 1}
 "let g:jedi#popup_select_first = 0
 "let g:jedi#auto_vim_configuration = 0
+
+"HDEVTOOLS FIX!
+function! FindCabalSandboxRoot()
+    return finddir('.cabal-sandbox', './;')
+endfunction
+
+function! FindCabalSandboxRootPackageConf()
+    return glob(FindCabalSandboxRoot().'/*-packages.conf.d')
+endfunction
+
+let g:hdevtools_options = '-g-ilib -g-isrc -g-i. -g-idist/build/autogen -g-Wall -g-package-conf='.FindCabalSandboxRootPackageConf()
