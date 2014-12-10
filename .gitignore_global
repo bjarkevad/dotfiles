@@ -31,3 +31,9 @@ tramp
 
 .DS_Store
 *.DotSettings.user
+.dir-locals.el
+*.swp
+*BASE*
+*LOCAL*
+*REMOTE*
+*BACKUP*

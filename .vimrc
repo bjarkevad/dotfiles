@@ -18,7 +18,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'eagletmt/neco-ghc'
 Plugin 'bitc/vim-hdevtools'
 Plugin 'Shougo/neocomplcache'
-Plugin 'gilligan/vim-lldb'
+"Plugin 'gilligan/vim-lldb'
 call vundle#end()
 
 "syntax
@@ -26,9 +26,9 @@ filetype plugin on
 filetype plugin indent on
 syntax on
 
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
 
 set encoding=utf-8
 set termencoding=utf-8

@@ -23,4 +23,7 @@
 
 [core]
     editor=vim
-	excludesfile = /Users/bjarke/.gitignore_global
+    excludesfile = /home/bjarke/.gitignore_global
+
+[help]
+    autocorrect = 1
