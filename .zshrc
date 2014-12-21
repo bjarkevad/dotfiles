@@ -16,13 +16,14 @@ ZSH=~/.oh-my-zsh
 #ZSH_THEME="frisk"
 #ZSH_THEME="frisk-custom"
 #ZSH_THEME="agnoster"
-ZSH_THEME="avit"
+ZSH_THEME="ys"
 
 #aliases
 alias weechat="weechat-curses"
 alias synergy="synergys -f --config /home/bjarke/.quicksynergy/synergy.conf"
-alias open="xdg-open"
+# alias open="xdg-open"
 alias ra="ranger"
+alias tree="tree -C -L 3"
 
 # ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
 
@@ -73,7 +74,7 @@ function git_restore { git checkout $(git rev-list -n 1 HEAD -- "$1")^ -- "$1"; 
 export git_restore
 
 export EDITOR=vim
-export TERM=xterm-256color
+# export TERM=xterm-256color
 
 alias grep="/usr/bin/grep $GREP_OPTIONS"
 unset GREP_OPTIONS
