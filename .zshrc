@@ -24,7 +24,7 @@ alias synergy="synergys -f --config /home/bjarke/.quicksynergy/synergy.conf"
 alias open="xdg-open"
 alias ra="ranger"
 
-ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
+# ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
 
 
 # Set to this to use case-sensitive completion
@@ -50,7 +50,7 @@ ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias 
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 
-plugins=(git scala github sbt cabal common-aliases) #vi-mode)
+plugins=(git scala github sbt cabal common-aliases fasd) #vi-mode)
 
 export KEYTIMEOUT=1
 
@@ -66,7 +66,7 @@ export KEYTIMEOUT=1
 source $ZSH/oh-my-zsh.sh
 
 # PATH
-export PATH=/home/bjarke/Workspace/shell:$HOME/.cabal/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/sbin:/sbin:/home/bjarke/Workspace/shell:/home/bjarke/Workspace/shell/startup-scripts:/usr/bin/vendor_perl:/usr/bin/core_perl:$PATH
+#export PATH=/home/bjarke/Workspace/shell:$HOME/.cabal/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/sbin:/sbin:/home/bjarke/Workspace/shell:/home/bjarke/Workspace/shell/startup-scripts:/usr/bin/vendor_perl:/usr/bin/core_perl:$PATH
 
 # Git restore file
 function git_restore { git checkout $(git rev-list -n 1 HEAD -- "$1")^ -- "$1"; }
