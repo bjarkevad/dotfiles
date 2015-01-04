@@ -51,7 +51,7 @@ alias tree="tree -C -L 3"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 
-plugins=(git scala github sbt cabal common-aliases fasd) #vi-mode)
+plugins=(git scala github sbt cabal common-aliases fasd gitignore) #vi-mode)
 
 export KEYTIMEOUT=1
 
