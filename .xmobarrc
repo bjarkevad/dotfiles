@@ -1,17 +1,33 @@
-Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
+Config { font = "xft:Terminus"
        , bgColor = "#1c1c1c"
        , fgColor = "grey"
        , position = Top
-       --, position = Static { xpos = 0, ypos = 0, width = 1920, height = 16 }
        , lowerOnStart = True
-       , commands = [ Run Network "enp6s0" ["-L","0","-H","15000","--normal","#429942","--high","red","-S","False"] 10
-                    , Run Cpu ["-L","3","-H","50","--normal","#429942","--high","red"] 10
-                    , Run Memory ["-t","Mem: <usedratio>%"] 10
-                    --, Run Com "uname" ["-s","-r"] "" 36000
+       , commands = [ Run Network "enp6s0" [ "--template",  "↓<rx>↑<tx>"
+                                           , "-L",          "0"
+                                           , "-H",          "15000"
+                                           , "--normal",    "#429942"
+                                           , "--high",      "red"
+                                           , "-S",          "True"
+                                           ] 10
+
+                    , Run Cpu              [ "-L",          "3"
+                                           , "-H",          "50"
+                                           , "--normal",    "#429942"
+                                           , "--high",      "red"
+                                           ] 10
+
+                    , Run Memory           ["--template",   "Mem: <usedratio>%"
+                                           , "-L",          "0"
+                                           , "-H",          "50"
+                                           , "--normal",    "#429942"
+                                           , "--high",      "red"
+                                           ] 10
+
                     , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %cpu% | %memory% | %enp6s0% | <fc=#69bcff>%date%</fc>"
+       , template = "%StdinReader% }{ %enp6s0% | %cpu% | %memory% | <fc=#69bcff>%date%</fc>"
        }
