@@ -25,6 +25,9 @@ alias synergy="synergys -f --config /home/bjarke/.quicksynergy/synergy.conf"
 alias ra="ranger"
 alias tree="tree -C -L 3"
 alias emacsbg='emacs&;disown;'
+alias edit='/usr/local/Cellar/emacs-mac/emacs-24.4-mac-5.2/bin/emacsclient --alternate-editor="" "$@"'
+alias pgshell='/Applications/Postgres.app/Contents/Versions/9.4/bin/psql -p5432'
+
 
 # ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
 
@@ -52,7 +55,7 @@ alias emacsbg='emacs&;disown;'
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 
-plugins=(git github cabal common-aliases gitignore) #vi-mode)
+plugins=(git github cabal common-aliases gitignore sbt scala postgresql) #vi-mode)
 
 #export KEYTIMEOUT=1
 
@@ -68,7 +71,7 @@ plugins=(git github cabal common-aliases gitignore) #vi-mode)
 source $ZSH/oh-my-zsh.sh
 
 # PATH
-export PATH=/home/bjarke/Workspace/shell:$HOME/.cabal/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/sbin:/sbin:/home/bjarke/Workspace/shell:/home/bjarke/Workspace/shell/startup-scripts:/usr/bin/vendor_perl:/usr/bin/core_perl:$PATH
+export PATH=$HOME/Applications/02263/sal/bin/:$HOME/Applications/02263/pvs/:$HOME/.OmniSharp/:$HOME/Workspace/shell:$HOME/.cabal/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/sbin:/sbin:$HOME/Workspace/shell:$HOME/Workspace/shell/startup-scripts:/usr/bin/vendor_perl:/usr/bin/core_perl:$PATH
 
 # Git restore file
 function git_restore { git checkout $(git rev-list -n 1 HEAD -- "$1")^ -- "$1"; }
@@ -82,3 +85,5 @@ export LANG=en_US.UTF-8
 
 alias grep="/usr/bin/grep $GREP_OPTIONS"
 unset GREP_OPTIONS
+
+. /Users/bjarke/.nix-profile/etc/profile.d/nix.sh
