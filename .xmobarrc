@@ -1,33 +1,39 @@
-Config { font = "xft:Terminus"
+Config { font = "xft:Terminus:pixelsize=10"
        , bgColor = "#1c1c1c"
        , fgColor = "grey"
        , position = Top
        , lowerOnStart = True
-       , commands = [ Run Network "enp6s0" [ "--template",  "↓<rx>↑<tx>"
-                                           , "-L",          "0"
-                                           , "-H",          "15000"
-                                           , "--normal",    "#429942"
+       , commands = [ Run Network "enp6s0" [ "--template",  "↓ <rx> ↑ <tx>"
+                                           , "-L",          "2500000" -- 2.5MB/s
+                                           , "-H",          "15000000" -- 15MB/s
+                                           , "--low",    "#429942"
+                                           , "--normal",    "orange"
                                            , "--high",      "red"
                                            , "-S",          "True"
                                            ] 10
 
-                    , Run Cpu              [ "-L",          "3"
-                                           , "-H",          "50"
-                                           , "--normal",    "#429942"
+                    , Run Cpu              ["--template", "<vbar>"
+                                           , "-L",          "25"
+                                           , "-H",          "75"
+                                           , "--low",    "#429942"
+                                           , "--normal", "orange"
                                            , "--high",      "red"
                                            ] 10
 
-                    , Run Memory           ["--template",   "Mem: <usedratio>%"
-                                           , "-L",          "0"
-                                           , "-H",          "50"
-                                           , "--normal",    "#429942"
+                    -- , Run Memory           ["--template",   "↜Mem: <usedratio>%"
+                    , Run Memory           ["--template",   "<usedvbar>"
+                                           , "-L",          "25"
+                                           , "-H",          "75"
+                                           , "--low",    "#429942"
+                                           , "--normal", "orange"
                                            , "--high",      "red"
                                            ] 10
 
-                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+                    , Run Date "%a %d %b %H:%M " "date" 10
+                    --, Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{ %enp6s0% | %cpu% | %memory% | <fc=#69bcff>%date%</fc>"
+       , template = "%StdinReader% }{ %enp6s0% | %cpu% %memory% | <fc=#69bcff>%date%</fc>"
        }

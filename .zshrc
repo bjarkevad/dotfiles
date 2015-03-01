@@ -16,7 +16,7 @@ ZSH=~/.oh-my-zsh
 #ZSH_THEME="frisk"
 #ZSH_THEME="frisk-custom"
 #ZSH_THEME="agnoster"
-ZSH_THEME="ys"
+ZSH_THEME="ys2"
 
 #aliases
 alias weechat="weechat-curses"
@@ -25,9 +25,9 @@ alias synergy="synergys -f --config /home/bjarke/.quicksynergy/synergy.conf"
 alias ra="ranger"
 alias tree="tree -C -L 3"
 alias emacsbg='emacs&;disown;'
-alias edit='/usr/local/Cellar/emacs-mac/emacs-24.4-mac-5.2/bin/emacsclient --alternate-editor="" "$@"'
-alias pgshell='/Applications/Postgres.app/Contents/Versions/9.4/bin/psql -p5432'
-
+alias edit='emacsclient --alternate-editor="" "$@"'
+#alias pgshell='/Applications/Postgres.app/Contents/Versions/9.4/bin/psql -p5432'
+alias pgshell='psql -p5432 -U postgres'
 
 # ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
 
@@ -55,7 +55,7 @@ alias pgshell='/Applications/Postgres.app/Contents/Versions/9.4/bin/psql -p5432'
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
 
-plugins=(git github cabal common-aliases gitignore sbt scala postgresql) #vi-mode)
+plugins=(git github cabal fasd common-aliases gitignore sbt scala postgresql) #vi-mode)
 
 #export KEYTIMEOUT=1
 
@@ -86,4 +86,5 @@ export LANG=en_US.UTF-8
 alias grep="/usr/bin/grep $GREP_OPTIONS"
 unset GREP_OPTIONS
 
-. /Users/bjarke/.nix-profile/etc/profile.d/nix.sh
+eval "$(fasd --init auto)"
+#. /Users/bjarke/.nix-profile/etc/profile.d/nix.sh

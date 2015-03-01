@@ -27,3 +27,7 @@
 
 [help]
     autocorrect = 1
+[github]
+	user = bjarkevad
+	password = dinmor123
+	oauth-token = a99a792dba86d556d7e7368bc7b0b0af4cc92923
