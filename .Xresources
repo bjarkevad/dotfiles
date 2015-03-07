@@ -279,7 +279,7 @@ URxvt*background: #313131
 URxvt.saveLines:32767
 URxvt.scrollBar: false
 
-URxvt*font: xft:Terminus:pixelsize=12
+URxvt*font: xft:Terminus:pixelsize=20
 
 URxvt.perl-ext-common: default,matcher
 URxvt.urlLauncher: uzbl-browser
@@ -331,3 +331,11 @@ xterm*color14:        #F0E68C
 !white
 xterm*color7:         #DDDDDD
 xterm*color15:        #FFFFFF
+
+#Xft.dpi: 180
+#Xft.autohint: 0
+#Xft.lcdfilter:  lcddefault
+#Xft.hintstyle:  hintfull
+#Xft.hinting: 1
+#Xft.antialias: 1
+#Xft.rgba: rgb
