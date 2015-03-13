@@ -1,90 +1,41 @@
-# TMUX
-#if which tmux 2>&1 >/dev/null; then
-    #if not inside a tmux session, and if no session is started, start a new session
-    #test -z "$TMUX" && (tmux -u attach || tmux -u new-session)
-#fi
-
-#source /usr/share/doc/pkgfile/command-not-found.zsh
-
-# Path to your oh-my-zsh configuration.
 ZSH=~/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-#ZSH_THEME="frisk"
-#ZSH_THEME="frisk-custom"
-#ZSH_THEME="agnoster"
 ZSH_THEME="ys2"
 
-#aliases
 alias weechat="weechat-curses"
 alias synergy="synergys -f --config /home/bjarke/.quicksynergy/synergy.conf"
-# alias open="xdg-open"
+alias open="xdg-open"
 alias ra="ranger"
 alias tree="tree -C -L 3"
 alias emacsbg='emacs&;disown;'
 alias edit='emacsclient --alternate-editor="" "$@"'
-#alias pgshell='/Applications/Postgres.app/Contents/Versions/9.4/bin/psql -p5432'
 alias pgshell='psql -p5432 -U postgres'
+alias grep="/usr/bin/grep $GREP_OPTIONS"
+unset GREP_OPTIONS
 
-# ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
+eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
 
+COMPLETION_WAITING_DOTS="true"
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+plugins=(git github cabal fasd common-aliases gitignore sbt scala postgresql vi-mode)
 
-# Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-
-
-plugins=(git github cabal fasd common-aliases gitignore sbt scala postgresql) #vi-mode)
-
-#export KEYTIMEOUT=1
-
-#bindkey -v 
-#
-#bindkey '^P' up-history
-#bindkey '^N' down-history
-#bindkey '^?' backward-delete-char
-#bindkey '^h' backward-delete-char
-#bindkey '^w' backward-kill-word
-#bindkey '^r' history-incremental-search-backward
+export KEYTIMEOUT=1
+bindkey -v
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+bindkey '^r' history-incremental-search-backward
 
 source $ZSH/oh-my-zsh.sh
 
-# PATH
-export PATH=$HOME/Applications/02263/sal/bin/:$HOME/Applications/02263/pvs/:$HOME/.OmniSharp/:$HOME/Workspace/shell:$HOME/.cabal/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/sbin:/sbin:$HOME/Workspace/shell:$HOME/Workspace/shell/startup-scripts:/usr/bin/vendor_perl:/usr/bin/core_perl:$PATH
-
-# Git restore file
 function git_restore { git checkout $(git rev-list -n 1 HEAD -- "$1")^ -- "$1"; }
 export git_restore
 
 export EDITOR=vim
-# export TERM=xterm-256color
-
-export LC_ALL=en_US.UTF-8  
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-alias grep="/usr/bin/grep $GREP_OPTIONS"
-unset GREP_OPTIONS
+export PATH=$HOME/Applications/02263/sal/bin/:$HOME/Applications/02263/pvs/:$HOME/Workspace/config/shell:$HOME/.cabal/bin:$PATH
 
 eval "$(fasd --init auto)"
-#. /Users/bjarke/.nix-profile/etc/profile.d/nix.sh

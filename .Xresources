@@ -275,6 +275,7 @@ URxvt.foreground: #dcdccc
 
 !URxvt.depth: 32
 URxvt*background: #313131
+! URxvt*background:  #1c2126
 
 URxvt.saveLines:32767
 URxvt.scrollBar: false
@@ -332,10 +333,10 @@ xterm*color14:        #F0E68C
 xterm*color7:         #DDDDDD
 xterm*color15:        #FFFFFF
 
-#Xft.dpi: 180
-#Xft.autohint: 0
-#Xft.lcdfilter:  lcddefault
-#Xft.hintstyle:  hintfull
-#Xft.hinting: 1
-#Xft.antialias: 1
-#Xft.rgba: rgb
+!Xft.dpi: 180
+!Xft.autohint: 0
+!Xft.lcdfilter:  lcddefault
+!Xft.hintstyle:  hintfull
+!Xft.hinting: 1
+!Xft.antialias: 1
+!Xft.rgba: rgb
