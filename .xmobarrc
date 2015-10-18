@@ -1,46 +1,27 @@
 Config { font = "xft:Terminus:pixelsize=20"
        , bgColor = "#1c1c1c"
-       -- , bgColor = "#1c2126"
-       -- , bgColor = "#313131"
        , fgColor = "grey"
        , position = Top
-       -- , alpha = 200
-       , commands = [
-            -- Run Network "wlp3s0" [ "--template",   " <rx> / <tx>"
-            --                                , "-L",          "2000000" -- 2MB/s
-            --                                , "-H",          "2000000" -- 2MB/s
-            --                                , "--low",    "#429942"
-            --                                , "--normal",    "orange"
-            --                                , "--high",      "red"
-            --                                , "-S",          "True"
-            --                                ] 10
-
-                    -- , Run Cpu              ["--template", "CPU: <total>%"
-                    --                        , "-L",          "33"
-                    --                        , "-H",          "66"
-                    --                        , "--low",    "#429942"
-                    --                        , "--normal", "orange"
-                    --                        , "--high",      "red"
-                    --                        ] 10
-
-                    -- , Run Memory           ["--template",   "Mem: <usedratio>%"
-                    --                        , "-L",          "33"
-                    --                        , "-H",          "66"
-                    --                        , "--low",    "#429942"
-                    --                        , "--normal", "orange"
-                    --                        , "--high",      "red"
-                    --                        ] 10
-	 	    -- , Run Wireless "wlp3s0" ["--template", "<essid> <quality>%"] 10
-	   	    -- , Run Battery [ "--template", "<acstatus> <left>% (<timeleft>)"] 60
-		    --, Run Volume "default" "Master" [] 10
-		    -- , Run Volume "pulse"  "Master" ["-t", "Vol: <volume>%"] 1
-                      Run BatteryP ["BAT0"] ["-t", "<acstatus>", "--", "-O", "<fc=#00CC00><left>%</fc>", "-i", "<fc=#00CC00><left>%</fc>", "-o", "<left>%"] 100
-                    , Run Date "%a %d %b %H:%M " "date" 10
-                    , Run StdinReader
-                    ]
        , lowerOnStart = True
        , sepChar = "%"
        , alignSep = "}{"
-       -- , template = "%StdinReader% }{  %wlp3s0% @ %wlp3s0wi% | %cpu% | %memory% | %battery% | <fc=#68bcff> %date%</fc>"
-       , template = "%StdinReader% }{ %battery% | <fc=#68bcff>%date%</fc> "
+       , template = "%StdinReader% }{%wlp3s0wi% | %battery% | %kbd% | <fc=#68bcff>%date%</fc>          "
+       , commands = [
+        Run Wireless "wlp3s0" [
+	    "-t", "<essid> <quality>%"
+       ] 10
+
+	, Run BatteryP ["BAT0"] [
+            "-t", "<acstatus>"
+            , "--"
+            , "-O", "<fc=#00CC00><left>%</fc>"
+            , "-i", "<fc=#00CC00><left>%</fc>"
+            , "-o", "<left>%"
+        ] 100
+        , Run Date "%a %d %b %H:%M " "date" 10
+        , Run Kbd []
+        , Run StdinReader
+        ]
        }
+
+       -- , template = "%StdinReader% }{%dynnetwork% @ %wlp3s0wi% | %battery% | %kbd% | <fc=#68bcff>%date%</fc>          "

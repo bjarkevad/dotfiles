@@ -11,13 +11,19 @@ alias emacsbg='emacs&;disown;'
 alias edit='emacsclient --alternate-editor="" "$@"'
 alias pgshell='psql -p5432 -U postgres'
 alias grep="/usr/bin/grep $GREP_OPTIONS"
+alias cnsync="python2 ~/Workspace/cncli/downloader.py"
+alias telegram="unset QT_STYLE_OVERRIDE && telegram"
+alias gf="git fetch"
+alias gfa="git fetch --all"
 unset GREP_OPTIONS
 
-eval $(keychain --eval --agents ssh -Q --quiet id_rsa)
+envoy -t ssh-agent id_rsa
+# envoy -t ssh-agent id_rsa nxtoff1
+source <(envoy -p)
 
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git github cabal fasd common-aliases gitignore sbt scala postgresql vi-mode)
+plugins=(git github cabal fasd common-aliases gitignore sbt scala postgresql vi-mode jsontools lein)
 
 export KEYTIMEOUT=1
 bindkey -v
@@ -36,6 +42,6 @@ export git_restore
 export EDITOR=vim
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export PATH=$HOME/Applications/02263/sal/bin/:$HOME/Applications/02263/pvs/:$HOME/Workspace/config/shell:$HOME/.cabal/bin:$PATH
+export PATH=$HOME/Applications/02263/sal/bin/:$HOME/Applications/02263/pvs/:$HOME/Applications/02263/rsl/:$HOME/Workspace/config/shell:$HOME/.cabal/bin:$PATH
 
 eval "$(fasd --init auto)"
